@@ -22,8 +22,8 @@ window.addEventListener('mousemove', function (event) {
 });
 ctx.fillStyle = 'white';
 ctx.font = '30px Verdana';
-ctx.fillText('Hallo', 0, 30);
-const textCoordinates = ctx.getImageData(0, 0, 100, 100);
+ctx.fillText('Welcome', 0, 50);
+const textCoordinates = ctx.getImageData(0, 0, 200, 100);
 
 class Particle {
     constructor(x, y) {
@@ -97,34 +97,10 @@ function animate() {
     for (let i = 0; i < particleArray.length; i++) {
         particleArray[i].draw();
         particleArray[i].update();
-        connect();
+        
 
     }
     requestAnimationFrame(animate);
 
 }
 animate();
-
-function connect() {
-    let opacityValue = 1;
-    for (let a = 0; a < particleArray.length; a++) {
-        for (let b = a; b < particleArray.length; b++) {
-            let dx = particleArray[a].x - particleArray[b].x;
-            let dy = particleArray[a].y - particleArray[b].y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-
-            opacityValue = 1 - (distance / 50);
-            ctx.strokeStyle = 'rgba(255,255,255,)' + opacityValue
-                + ')';
-
-            if (distance < 1) {
-
-                ctx.lineWidth = 5;
-                ctx.beginPath();
-                ctx.moveTo(particleArray[a].x, particleArray[a].y);
-                ctx.lineTo(particleArray[a].x, particleArray[b].y);
-                ctx.stroke();
-            }
-        }
-    }
-}
