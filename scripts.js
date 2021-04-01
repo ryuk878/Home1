@@ -3,7 +3,8 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ctx.globalCompositeOperation = 'destionation-over'; 
-var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+let hue = 0; 
+
 
 const edge = 50;
 let drawing = false; 
@@ -44,10 +45,13 @@ class Root {
             ctx.arc(this.x, this.y, radius, 0, 2 * Math.PI);
             ctx.fillStyle = this.color; 
             ctx.fill(); 
-            ctx.strokeStyle = 'gold'
+            ctx.strokeStyle = 'hsl(' + hue + ', 100%, 50%)';
             ctx.stroke();
+            
         }
+        
     }
+    
 }
 
 function brachOut() {
@@ -55,7 +59,7 @@ function brachOut() {
     const centerX = mouse.x;
     const centerY = mouse.y;
     for (let i = 0; i < 3 ; i++){
-    const root = new Root(mouse.x, mouse.y, 'blue', centerX, centerY); 
+    const root = new Root(mouse.x, mouse.y, 'hsl', centerX, centerY); 
     root.draw();
     }
 }
@@ -75,6 +79,7 @@ window.addEventListener('mousemove', function(){
 window.addEventListener('mousedown', function() {
     drawing = true ;
     
+    
 
 }); 
 
@@ -83,11 +88,3 @@ window.addEventListener('mouseup', function(){
 
 
 });
-
-function generateRandomColor()
-{
-    var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
-    return randomColor;
-    
-}
-
