@@ -4,13 +4,13 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
 let adjustX = 50;
-let adjustY = 50;
+let adjustY = 30;
 
 
 const mouse = {
     x: null,
     y: null,
-    radius: 250
+    radius: 200
 }
 
 window.addEventListener('mousemove', function (event) {
@@ -22,8 +22,8 @@ window.addEventListener('mousemove', function (event) {
 });
 ctx.fillStyle = 'white';
 ctx.font = '30px Verdana';
-ctx.fillText('Welcome', 0, 50);
-const textCoordinates = ctx.getImageData(0, 0, 200, 100);
+ctx.fillText('Welcome.', 0, 40);
+const textCoordinates = ctx.getImageData(0, 0, 145, 100);
 
 class Particle {
     constructor(x, y) {
@@ -32,7 +32,7 @@ class Particle {
         this.size = 3;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.density = (Math.random() * 40) + 5;
+        this.density = (Math.random() * 60) + 10;
     }
 
     draw() {
@@ -90,7 +90,7 @@ function init() {
     }
 }
 init();
-console.log(particleArray);
+
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
