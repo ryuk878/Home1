@@ -1,8 +1,7 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-scale = 1; 
-canvas.width = window.innerWidth * scale; 
-canvas.height = window.innerHeight * scale;
+canvas.width = window.innerWidth; 
+canvas.height = window.innerHeight;
 let adjustX = 50;
 let adjustY = 30;
 
@@ -75,6 +74,8 @@ class Particle {
         }
     }
 }
+
+
 
 function init() {
     particleArray = [];
