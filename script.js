@@ -3,8 +3,8 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
-let adjustX = 10;
-let adjustY = 10;
+let adjustX = 50;
+let adjustY = 30;
 
 
 
