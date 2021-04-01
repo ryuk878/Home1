@@ -1,12 +1,10 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let particleArray = [];
+scale = 1; 
+canvas.width = window.innerWidth * scale; 
+canvas.height = window.innerHeight * scale;
 let adjustX = 50;
 let adjustY = 30;
-scalewidth = 1; 
-scaleheight = 1;
 
 
 
