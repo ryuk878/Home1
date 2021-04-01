@@ -2,8 +2,8 @@ const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth; 
 canvas.height = window.innerHeight;
-let adjustX = 50;
-let adjustY = 30;
+let adjustX = 10;
+let adjustY = 10;
 
 
 
