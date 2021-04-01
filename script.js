@@ -5,6 +5,8 @@ canvas.height = window.innerHeight;
 let particleArray = [];
 let adjustX = 50;
 let adjustY = 30;
+scalewidth = 1; 
+scaleheight = 1;
 
 
 
@@ -23,7 +25,7 @@ window.addEventListener('mousemove', function (event) {
 });
 ctx.fillStyle = 'white';
 ctx.font = '30px Verdana';
-ctx.fillText('Welcome.', 0, 40);
+ctx.fillText('Welcome.',0 , 40);
 const textCoordinates = ctx.getImageData(0, 0, 145, 100);
 
 class Particle {
@@ -104,4 +106,6 @@ function animate() {
     requestAnimationFrame(animate);
 
 }
+
+    
 animate();
