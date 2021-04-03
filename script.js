@@ -1,9 +1,9 @@
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth; 
-canvas.height = window.innerHeight;
-let adjustX = 10;
-let adjustY = 10;
+canvas.width = window.innerWidth  
+canvas.height = window.innerHeight 
+let adjustX = 1;
+let adjustY = 1;
 
 
 
@@ -16,14 +16,17 @@ const mouse = {
 window.addEventListener('mousemove', function (event) {
     mouse.x = event.x;
     mouse.y = event.y;
+    
 
 
 
 });
 ctx.fillStyle = 'white';
-ctx.font = '30px Verdana';
+ctx.font = '20px Verdana';
 ctx.fillText('Welcome.',0 , 40);
 const textCoordinates = ctx.getImageData(0, 0, 145, 100);
+
+
 
 class Particle {
     constructor(x, y) {
@@ -32,7 +35,7 @@ class Particle {
         this.size = 3;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.density = (Math.random() * 60) + 10;
+        this.density = (Math.random() * 60) + 30;
     }
 
     draw() {
@@ -61,7 +64,7 @@ class Particle {
             this.y -= directionY;
 
         } else {
-            this.size = 3;
+            this.size = 3.5;
             if (this.x !== this.baseX) {
                 let dx = this.x - this.baseX;
                 this.x -= dx / 10;
@@ -108,3 +111,10 @@ function animate() {
 
     
 animate();
+
+window.addEventListener('resize', function(){
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+})
+
