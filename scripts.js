@@ -62,14 +62,6 @@ function branchOut() {
     }
 }
 }
-// werkt nog niet goed.
-
-//window.addEventListener('resize', function(){
-//canvas.width = window.innerWidth;
-//canvas.height = window.innerHeight;
-
-
-//})
 
 // knoppen functies
 window.addEventListener('mousemove', function(){
@@ -91,3 +83,10 @@ window.addEventListener('mouseup', function(){
 
 });
 
+
+
+function alertUser(msg) {
+    alert(msg);
+
+}
+   
