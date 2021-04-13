@@ -77,4 +77,5 @@ window.addEventListener("mouseup", function () {
 
 window.addEventListener("load", (event) => {
   alert("Klik op je linker muisknop om te tekenen!");
+  alert("Gebruik je rechter muisknop om je afbeelding op te slaan");
 });
