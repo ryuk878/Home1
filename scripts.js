@@ -66,14 +66,15 @@ window.addEventListener("mousemove", function () {
   branchOut();
 });
 
-window.addEventListener("mousedown", function (onclick) {
-  drawing = true;
+window.addEventListener("mousedown", function () {
+  if (event.button === 0) {
+    drawing = true;
+  }
 });
-
 window.addEventListener("mouseup", function () {
   drawing = false;
 });
 
-function alertUser(msg) {
-  alert(msg);
-}
+window.addEventListener("load", (event) => {
+  alert("Klik op je linker muisknop om te tekenen!");
+});
